@@ -36,6 +36,8 @@ public class User implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Provider provider;
 
+	private int otp;
+
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
@@ -96,10 +98,25 @@ public class User implements Serializable {
 		this.provider = provider;
 	}
 
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", fullName=" + fullName + ", email=" + email + ", password=" + password
-				+ ", mobileNo=" + mobileNo + ", isActive=" + isActive + ", provider=" + provider + "]";
+	public int getOtp() {
+		return otp;
 	}
 
+	public void setOtp(int otp) {
+		this.otp = otp;
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"userId=" + userId +
+				", fullName='" + fullName + '\'' +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", mobileNo='" + mobileNo + '\'' +
+				", isActive=" + isActive +
+				", provider=" + provider +
+				", otp=" + otp +
+				'}';
+	}
 }

@@ -46,7 +46,7 @@ public class SecurityConfig {
 	public SecurityFilterChain fiSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf()
 		.disable().authorizeHttpRequests()
-		.antMatchers("/registration/**", "/login/**", "/css/**")
+		.antMatchers("/registration", "/login", "/css/**")
 				.permitAll()
 				.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login")

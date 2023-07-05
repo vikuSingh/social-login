@@ -40,7 +40,6 @@ spring:
             scope:
               - email
               - profile
-
           facebook:
             clientId: 3391600991103362
             clientSecret: f8c18dae1e259ba662a66c0a8a504769
@@ -54,3 +53,9 @@ spring:
             scope:
               - email
               - public_profile
+          github:
+            clientId: 58ee881dcbfbbf2e7d97
+            clientSecret: f03ae15870a893aea6d50bf37a3a03a9a97b34d3
+            scope:
+              - user:email
+              - read:user
