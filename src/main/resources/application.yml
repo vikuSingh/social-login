@@ -1,0 +1,56 @@
+spring:
+  server:
+    use-forward-headers: true
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/demo
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    password: qdhjertqanzdetua
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          starttls:
+            enable: true
+          timeout: 5000
+          writetimeout: 5000
+    username: vikash.bitcse@gmail.com
+  thymeleaf:
+    cache: 'false  '
+    suffix: .html
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 946237907339-ou8jn5nnagbehssek8aq5psiisu2ri00.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
+
+          facebook:
+            clientId: 3391600991103362
+            clientSecret: f8c18dae1e259ba662a66c0a8a504769
+            accessTokenUri: https://graph.facebook.com/oauth/access_token
+            userAuthorizationUri: https://www.facebook.com/dialog/oauth
+            tokenName: oauth_token
+            authenticationScheme: query
+            clientAuthenticationScheme: form
+            resource:
+              userInfoUri: https://graph.facebook.com/me
+            scope:
+              - email
+              - public_profile
