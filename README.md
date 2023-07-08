@@ -65,6 +65,5 @@ Files
 7. In fecture inhancement add other social media account in the application.yaml file
 
 8. Ready to go.
-  
 
 
