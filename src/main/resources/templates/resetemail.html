@@ -19,20 +19,11 @@
     <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
       <div class="img-left d-none d-md-flex"></div>
       <div class="card-body">
-        <h4 class="title text-center mt-4">Login into account</h4>
-        <div th:if="${param.error}">
-          <div class="text-center alert alert-info"><span class="text-danger font-weight-bold">INVALID OTP FOUND !</span></div>
+        <h4 class="title text-center mt-4">Frogot Password?</h4>
+        <p>Hi, <span th:text="*{message}" class="text-info"></span></p>
+        <div class="text-center">
+          <a th:href="@{/login}" class="forget-link">Return to Login Page</a>
         </div>
-        <form class="form-box px-3" th:action="@{/login/sendOtp}" method="post" th:object="${otp}">
-          <div class="text-center"> <span class="text-info">A code has been sent to</span> <small>*****Mail</small> </div>
-          <div class="form-input">
-            <span><i class="fa fa-key"></i></span> <input type="text" name="otp" placeholder="OTP" tabindex="10" required>
-          </div>
-          <div class="mb-3">
-            <button type="submit" class="btn btn-block text-uppercase">
-              Validate</button>
-          </div>
-        </form>
       </div>
     </div>
   </div>

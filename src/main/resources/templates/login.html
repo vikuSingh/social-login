@@ -19,9 +19,10 @@
 			<div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
 				<div class="img-left d-none d-md-flex"></div>
 				<div class="card-body">
+					<div class="text-center text-success"><span th:text="*{message}"></span> </div>
 					<h4 class="title text-center mt-4">Login into account</h4>
 					<div th:if="${param.error}">
-						<div class="alert alert-info">INVALID USERNAME AND PASSWORD !</div>
+						<div class="alert alert-info text-center"><span class="text-danger font-weight-bold"> INVALID USERNAME AND PASSWORD !</span></div>
 					</div>
 					<form class="form-box px-3" th:action="@{/login}" method="post">
 						<div class="form-input">
@@ -47,7 +48,7 @@
 						</div>
 
 						<div class="text-right">
-							<a href="#" class="forget-link"> Forget Password? </a>
+							<a th:href="@{/forgot}" class="forget-link"> Forget Password? </a>
 						</div>
 
 						<div class="text-center mb-3">or login with</div>

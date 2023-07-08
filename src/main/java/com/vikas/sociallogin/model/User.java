@@ -36,6 +36,8 @@ public class User implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Provider provider;
 
+	private String passwordToken;
+
 	private int otp;
 
 	public User() {
@@ -104,6 +106,14 @@ public class User implements Serializable {
 
 	public void setOtp(int otp) {
 		this.otp = otp;
+	}
+
+	public String getPasswordToken() {
+		return passwordToken;
+	}
+
+	public void setPasswordToken(String passwordToken) {
+		this.passwordToken = passwordToken;
 	}
 
 	@Override

@@ -7,6 +7,8 @@ public class UserLoginDto {
 
 	private int otp;
 
+	private String passwordToken;
+
 	public UserLoginDto() {
 		// TODO Auto-generated constructor stub
 	}
@@ -36,12 +38,21 @@ public class UserLoginDto {
 		this.otp = otp;
 	}
 
+	public String getPasswordToken() {
+		return passwordToken;
+	}
+
+	public void setPasswordToken(String passwordToken) {
+		this.passwordToken = passwordToken;
+	}
+
 	@Override
 	public String toString() {
 		return "UserLoginDto{" +
 				"username='" + username + '\'' +
 				", password='" + password + '\'' +
 				", otp=" + otp +
+				", passwordToken='" + passwordToken + '\'' +
 				'}';
 	}
 }

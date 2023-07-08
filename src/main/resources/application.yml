@@ -2,9 +2,9 @@ spring:
   server:
     use-forward-headers: true
   datasource:
-    password: root
+    password:  -- your db password --
     url: jdbc:mysql://localhost:3306/demo
-    username: root
+    username: -- your db username --
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,7 +14,7 @@ spring:
     show-sql: true
   mail:
     host: smtp.gmail.com
-    password: qdhjertqanzdetua
+    password: -- your password --
     port: 587
     properties:
       mail:
@@ -25,7 +25,7 @@ spring:
             enable: true
           timeout: 5000
           writetimeout: 5000
-    username: vikash.bitcse@gmail.com
+    username: -- your username --
   thymeleaf:
     cache: 'false  '
     suffix: .html
@@ -35,14 +35,14 @@ spring:
       client:
         registration:
           google:
-            clientId: 946237907339-ou8jn5nnagbehssek8aq5psiisu2ri00.apps.googleusercontent.com
-            clientSecret: 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
+            clientId: -- your google client --
+            clientSecret: -- your google clientSecret --
             scope:
               - email
               - profile
           facebook:
-            clientId: 3391600991103362
-            clientSecret: f8c18dae1e259ba662a66c0a8a504769
+            clientId: -- your facebook clientId --
+            clientSecret: -- your facebook clientSecret --
             accessTokenUri: https://graph.facebook.com/oauth/access_token
             userAuthorizationUri: https://www.facebook.com/dialog/oauth
             tokenName: oauth_token
@@ -54,8 +54,8 @@ spring:
               - email
               - public_profile
           github:
-            clientId: 58ee881dcbfbbf2e7d97
-            clientSecret: f03ae15870a893aea6d50bf37a3a03a9a97b34d3
+            clientId:  -- your github clientId --
+            clientSecret: -- your github clientSecret --
             scope:
               - user:email
               - read:user

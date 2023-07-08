@@ -1,8 +1,10 @@
 package com.vikas.sociallogin.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -29,6 +31,16 @@ public class SecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 
+
+	@Bean
+	public MessageSource getMessageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename("classpath:messages");
+		messageSource.setDefaultEncoding("UTF-8");
+		return messageSource;
+	}
+
+
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
@@ -46,7 +58,7 @@ public class SecurityConfig {
 	public SecurityFilterChain fiSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.csrf()
 		.disable().authorizeHttpRequests()
-		.antMatchers("/registration", "/login", "/css/**")
+		.antMatchers("/registration", "/login", "/css/**","/forgot/**", "/resetemail")
 				.permitAll()
 				.anyRequest().authenticated().and()
 				.formLogin().loginPage("/login")
